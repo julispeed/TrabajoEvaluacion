@@ -1,0 +1,225 @@
+body
+{
+    background-color: rgb(125, 125, 125);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+.error
+{
+    text-align: center;
+    align-items: center;
+    background-color: red;
+}
+
+button
+{
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.5s;
+    border: none;
+}
+button:hover
+{
+    background-color: rgb(255, 255, 255);;
+}
+
+.boton-mostrartodo
+{
+    height: 10%;
+    display: none;
+
+}
+main
+{
+    display: flex;
+    flex-direction: column;    
+}
+/* principio de pagina */
+nav
+{
+    display:flex; 
+    width: 100%;
+    height: 10%; 
+    border-bottom: rgb(255, 255, 255)    solid   10px;
+}
+.boton-cancelar
+{
+    display: none;
+} 
+.logo
+{
+    height: 100%;
+    width: 50%;
+}
+.titulo:hover
+{
+    color: darkcyan;
+}
+.titulo
+{
+    color: aliceblue;
+    text-align: center;
+    margin-top: 10%;   
+    margin: 10%; 
+}
+/* fin principio de pagina */
+/* filtro (relacionado con la registracion y muestra de informacion) */
+h2, h1, p, a, label
+{
+    color: white;   
+}
+
+.filtro
+{
+    background-color: rgb(125, 125, 125);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    padding-top: 5px;    
+}
+button
+{
+    margin: 5%;
+}
+.botones
+{
+    display: flex;
+    justify-content: center;
+    width: 10%;
+}
+/*fin filtro*/
+/* ingreso de informacion*/
+.informacion
+{
+    background-color: rgb(125, 125, 125);
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}
+.formulario
+{  
+    width: 50%;
+}
+.formulario h2{
+    text-align: center;
+}
+.form label
+{
+    
+    display: block;
+}
+.form
+{
+    margin: 10px;
+    text-align: center;
+    border-radius: 1%;
+    margin: 1%;
+}
+textarea
+{
+    width: 80%;
+    height: 30vh;
+}
+
+
+.radios
+{
+    display: flex;
+    justify-content: center;
+}
+.botonesdecarga
+{
+    display: flex;
+    justify-content: center;
+}
+
+
+/*fin ingreso de informacion*/
+
+/*footer*/
+footer
+{
+    background-color: rgb(125, 125, 125);
+    margin: 0%;
+    width: 100%;
+    text-align: center;
+    position: relative;    
+}
+
+.division
+{
+    border-bottom: 10px solid rgb(255, 255, 255);
+
+}
+
+
+/*Filtros de contiene*/
+.filtros
+{
+    display: none;
+
+}
+.filtro-eventos
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/*Listado*/
+table {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    border-collapse: collapse;
+}
+table img
+{
+    width: 50px;
+}
+
+th, td {
+    text-align: left;
+    border: 1px solid #ddd;
+}
+/*Fin listado*/
+
+@media (max-width: 550px) 
+{
+    nav
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav .logo
+    {
+        width: 100%;
+    }
+    .botones
+    {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+    }
+
+    /*Listado*/
+    .listado
+    {
+        width: 100%;
+        overflow: scroll;
+    }
+    table img
+{
+    width: 50px;
+}
+
+    /*Fin listado*/
+
+
+}

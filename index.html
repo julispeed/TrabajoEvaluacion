@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regient</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/Imagenes/Logopagina.png">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <img class="logo" src="/Imagenes/LogoEmpresa.png">
+            <h1 class="titulo">Registra tus clientes o enemigos para que puedas recordar quien te debe guita :)</h1>
+        </nav>
+    </header>
+    <main>       
+
+
+        <section class="contenedor">
+
+            <div class="informacion">
+                <div class="formulario">
+                    <h2>REGISTRAR CLIENTE</h2>
+                    <form id="Fclientes">
+                        <div class="form">
+                            <label for="tclientes-razonsocial">Razon Social</label>
+                            <input type="text" id="tclientes-razonsocial" name="tclientes-razonsocial" required>
+                        </div>
+                        <div class="form">
+                            <label>Condicion de venta</label>
+                            <div class="radios">
+                                <input type="radio" name="CondicionVenta" id="Contado" value="Contado">
+                                <label>Contado</label>
+                                <input type="radio" name="CondicionVenta" id="Cuenta Corriente" value="Cuenta Corriente">
+                                <label>Cuenta Corriente</label>
+                            </div>
+                        </div>
+                        <div class="form">
+                            <label for="cliente-fecha">Inicio de Actividades</label>
+                            <input type="date" id="cliente-fecha" name="cliente-fecha" required>
+                        </div>
+                        <div class="form">
+                            <label for="tcliente-direccion">Direccion</label>         
+                            <input type="text" name="tcliente-direccion" id="tcliente-direccion" required> 
+                        </div>
+                        <div class="form">
+                            <label>Categoria IVA</label>
+                            <select id="cbCategoriaIVA" name="CategoriaIVA" class="ciudad" required>
+                                <option value="Monotributo">Monotributo</option>
+                                <option value="Responsable Inscripto">Responsable Inscripto</option>
+                                <option value="Exento">Exento</option>
+                            </select>
+                        </div>                
+                        <div class="form">
+                            <label for="chactivo">Activo</label>
+                            <input type="checkbox" name="chactivo" id="chactivo">
+                        </div>
+                        <div class="form">
+                            <label for="raevento-puntuacion">Valoriacion del cliente:<span id="puntuacion">0</span></label>        
+                            <input type="range" id="racliente-puntacion" name="racliente-puntuacion" min="0" max="5" value="0" required>
+                        </div>
+                        <div class="form">
+                            <label for="cliente-numero">Numero Telefonico</label>
+                            <input type="text" id="cliente-numero" name="Cliente-numero" required>
+                        </div>
+                        <!--
+                        <div class="form">
+                            <label for="evento-observacion">Observaciones</label>
+                            <textarea id="evento-observacion" name="evento-observacion"></textarea>
+                        </div>
+                        -->
+                        <div>
+                                <div class="botonesdecarga">                                
+                                    <button type="submit" id="boton-enviar" class="boton" >Cargar Cliente</button>
+                                    <button type="submit" id="boton-actualizar" class="boton" disabled >Actualizar</button>
+                                    <button type="reset" id="boton-reset" class="boton" >Limpiar</button>                              
+                                </div>
+                                <div class="botonesdecarga">
+                                    <button id="M-todo" class="boton-mostrartodo"> Mostrar Todo </button>                                    
+                                </div>
+                                
+                                <button id="boton-cancelar" class="boton-cancelar">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>   
+
+    </main>
+    <div class="error">
+        <h4 class="error" id="mensajeerror"></h4>
+    </div>
+
+    <div class="division"></div>
+
+    <section class="listado">
+        <table> 
+            <thead>
+                <tr>
+                    <th>Razon Social</th>
+                    <th>Condicion de venta</th>                    
+                    <th>activo</th>
+                    <th>Inicio de Actividades</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody id="informacion">
+
+            </tbody>
+        </table>
+
+    </section>
+
+
+
+    <footer>
+        <p>&copy; 2024 Even-tos. Todos los derechos reservados.</p>
+        <p>
+            <a href="https://www.facebook.com" target="_blank">Facebook</a> | 
+            <a href="https://www.twitter.com" target="_blank">Twitter</a> | 
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        </p>
+    </footer>
+
+
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
