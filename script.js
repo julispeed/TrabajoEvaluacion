@@ -105,7 +105,8 @@ function Insertar(event)
         document.getElementById('mensajeerror').textContent="Categoria IVA inválida"; //caso imposible
         return;
     }
-    else if (!(ClienteFecha && ClienteFecha>Date.now() ))
+    else if (!ClienteFecha || new Date(ClienteFecha)> Date.now())
+
     {
         document.getElementById('cliente-fecha').style.border=' 2px solid red';
         document.querySelector('.error').style.display='block';
