@@ -105,11 +105,11 @@ function Insertar(event)
         document.getElementById('mensajeerror').textContent="Categoria IVA inválida"; //caso imposible
         return;
     }
-    else if (!ClienteFecha)
+    else if (!(ClienteFecha && ClienteFecha>Date.now() ))
     {
         document.getElementById('cliente-fecha').style.border=' 2px solid red';
         document.querySelector('.error').style.display='block';
-        document.getElementById('mensajeerror').textContent="Fecha inválida";
+        document.getElementById('mensajeerror').textContent="Fecha inválida o es mayor a la fecha actual";
         return;
     }
     else if (!direccionRegex.test(ClienteDireccion))
