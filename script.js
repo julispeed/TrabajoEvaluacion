@@ -59,6 +59,15 @@ function Eliminar(rs)
 
 function Insertar(event)
 {
+    document.getElementById('tclientes-razonsocial').style.border='';
+    document.getElementsByClassName("radios")[0].style.border='';
+    document.getElementById('cliente-fecha').style.border='';
+    document.getElementById('cliente-numero').style.border= '';         
+    document.getElementById('cbCategoriaIVA').style.border='';
+    document.getElementById('tcliente-direccion').style.border='';
+
+
+    
     event.preventDefault();//evita el recargo de la pagina al usar actualizar y enviar
     const expnum= new RegExp("^\\d+$");//expresion de telefono, donde solo aceptamos numeros
     const direccionRegex = new RegExp("^[A-Za-z]+\\s\\d+$"); // expresion de direccion, donde al principio aceptamos letras unicamentes y separado de un espacio numeros
@@ -77,42 +86,49 @@ function Insertar(event)
     //validaciones , retornamos un cartel por cada campo que lo requiera
     if (!ClienteRazonSocial)
     {   
+            document.getElementById('tclientes-razonsocial').style.border='2px solid red';
             document.querySelector('.error').style.display='block';
-            document.getElementById('mensajeerror').textContent="Razón social inválida"
+            document.getElementById('mensajeerror').textContent="Razón social inválida";
             return;
     }
     else if (!ClienteCondicionVenta)
         {
+            document.getElementsByClassName("radios")[0].style.border=' 2px solid red';
             document.querySelector('.error').style.display='block';
             document.getElementById('mensajeerror').textContent="Seleccione una condicion de venta"; //caso imposible
             return;
         }
     else if (!ClienteCatIva)
     {
+        document.getElementById('cbCategoriaIVA').style.border=' 2px solid red';
         document.querySelector('.error').style.display='block';
         document.getElementById('mensajeerror').textContent="Categoria IVA inválida"; //caso imposible
         return;
     }
     else if (!ClienteFecha)
     {
+        document.getElementById('cliente-fecha').style.border=' 2px solid red';
         document.querySelector('.error').style.display='block';
         document.getElementById('mensajeerror').textContent="Fecha inválida";
         return;
     }
     else if (!direccionRegex.test(ClienteDireccion))
     {
+        document.getElementById('tcliente-direccion').style.border=' 2px solid red';
         document.querySelector('.error').style.display='block';
         document.getElementById('mensajeerror').textContent="Dirección Inválida, debe colocarse el nombre de la calle primero y luego el numero, separados por un espacio.";
         return;
     }
     else if ( (!expnum.test(NumeroTel)) || (NumeroTel.length!=11))
-    {        
+    {      
+        document.getElementById('cliente-numero').style.border= ' 2px solid red';         
         document.querySelector('.error').style.display='block';
         document.getElementById('mensajeerror').textContent="El numero no es un numero de telefono";
         return;
     }
     else if (Clientes.some(c=> c.RazonSocial.toLowerCase() === ClienteRazonSocial.toLowerCase()))
     {
+        document.getElementById('tclientes-razonsocial').style.border='2px solid red';
         document.querySelector('.error').style.display='block';
         document.getElementById('mensajeerror').textContent="razon social ya ingresda";
             return;
@@ -172,6 +188,12 @@ function Insertar(event)
     //actualizamos
     ListarTabla(Clientes);
 
+    document.getElementById('tclientes-razonsocial').style.border='';
+    document.getElementsByClassName("radios")[0].style.border='';
+    document.getElementById('cliente-fecha').style.border='';
+    document.getElementById('cliente-numero').style.border= '';         
+    document.getElementById('cbCategoriaIVA').style.border='';
+    document.getElementById('tcliente-direccion').style.border='';
 }
 
 function ListarTabla(arregloClientes) {
@@ -322,6 +344,8 @@ document.getElementById('boton-enviar').addEventListener('click',Insertar);// ll
             }
             );
 //fin barra responsive
+
+document.getElementById('boton-reset').addEventListener('click', function(){document.querySelector('.error').style.display='none';})
 
 
 /*-------------------------------------------------------FIN LISTENER Y ELEMENTOS-----------------------------------------------------------------*/
